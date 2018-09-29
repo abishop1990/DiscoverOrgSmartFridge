@@ -15,4 +15,3 @@ Assumptions made:
 Improvements Needed:
 - Consider a database instead of local storage
 - Write tests/test client
-- Comment code for clarity
