@@ -19,6 +19,11 @@ public class SmartFridge  implements SmartFridgeManager{
 	private HashMap<String, FridgeItem> itemsByUUID;
 	private HashMap<Long, FridgeItem> itemsByItemType;
 	
+	public SmartFridge() {
+		itemsByUUID = new HashMap<String, FridgeItem>();
+		itemsByItemType = new HashMap<Long, FridgeItem>();
+	}
+	
 	/**
 	 * Handle an item being removed from the fridge
 	 */
@@ -60,6 +65,7 @@ public class SmartFridge  implements SmartFridgeManager{
 	 */
 	public Double getFillFactor(long itemType) {
 		FridgeItem fi= itemsByItemType.get(itemType);
+		if(fi == null) return 0.0;
 		return fi.getFillFactor();
 	}
 
